@@ -30,70 +30,70 @@ void HandlerInit(PRTelegramBot.Core.PRBot tg)
 		tg.Handler.OnPostMessageUpdate += Handler_OnWithoutMessageUpdate;
 
 		//Обработка не правильный тип сообщений
-		tg.Handler.Router.OnWrongTypeMessage += ExampleEvent.OnWrongTypeMessage;
+		tg.Handler.Router.OnWrongTypeMessage += PaintingSellingBot.Events.OnWrongTypeMessage;
 
 		//Обработка пользователь написал в чат start с deeplink
-		tg.Handler.Router.OnUserStartWithArgs += ExampleEvent.OnUserStartWithArgs;
+		tg.Handler.Router.OnUserStartWithArgs += PaintingSellingBot.Events.OnUserStartWithArgs;
 
 		//Обработка проверка привилегий
-		tg.Handler.Router.OnCheckPrivilege += ExampleEvent.OnCheckPrivilege;
+		tg.Handler.Router.OnCheckPrivilege += PaintingSellingBot.Events.OnCheckPrivilege;
 
 		//Обработка пропущенной  команды
-		tg.Handler.Router.OnMissingCommand += ExampleEvent.OnMissingCommand;
+		tg.Handler.Router.OnMissingCommand += PaintingSellingBot.Events.OnMissingCommand;
 
 		//Обработка не верного типа чата
-		tg.Handler.Router.OnWrongTypeChat += ExampleEvent.OnWrongTypeChat;
+		tg.Handler.Router.OnWrongTypeChat += PaintingSellingBot.Events.OnWrongTypeChat;
 
 		//Обработка локаций
-		tg.Handler.Router.OnLocationHandle += ExampleEvent.OnLocationHandle;
+		tg.Handler.Router.OnLocationHandle += PaintingSellingBot.Events.OnLocationHandle;
 
 		//Обработка контактных данных
-		tg.Handler.Router.OnContactHandle += ExampleEvent.OnContactHandle;
+		tg.Handler.Router.OnContactHandle += PaintingSellingBot.Events.OnContactHandle;
 
 		//Обработка голосований
-		tg.Handler.Router.OnPollHandle += ExampleEvent.OnPollHandle;
+		tg.Handler.Router.OnPollHandle += PaintingSellingBot.Events.OnPollHandle;
 
 		//Обработка WebApps
-		tg.Handler.Router.OnWebAppsHandle += ExampleEvent.OnWebAppsHandle;
+		tg.Handler.Router.OnWebAppsHandle += PaintingSellingBot.Events.OnWebAppsHandle;
 
 		//Обработка, когда пользователю отказано в доступе
-		tg.Handler.Router.OnAccessDenied += ExampleEvent.OnAccessDenied;
+		tg.Handler.Router.OnAccessDenied += PaintingSellingBot.Events.OnAccessDenied;
 
 		//Обработка сообщения с документом
-		tg.Handler.Router.OnDocumentHandle += ExampleEvent.OnDocumentHandle;
+		tg.Handler.Router.OnDocumentHandle += PaintingSellingBot.Events.OnDocumentHandle;
 
 		//Обработка сообщения с аудио
-		tg.Handler.Router.OnAudioHandle += ExampleEvent.OnAudioHandle;
+		tg.Handler.Router.OnAudioHandle += PaintingSellingBot.Events.OnAudioHandle;
 
 		//Обработка сообщения с видео
-		tg.Handler.Router.OnVideoHandle += ExampleEvent.OnVideoHandle;
+		tg.Handler.Router.OnVideoHandle += PaintingSellingBot.Events.OnVideoHandle;
 
 		//Обработка сообщения с фото
-		tg.Handler.Router.OnPhotoHandle += ExampleEvent.OnPhotoHandle;
+		tg.Handler.Router.OnPhotoHandle += PaintingSellingBot.Events.OnPhotoHandle;
 
 		//Обработка сообщения с стикером
-		tg.Handler.Router.OnStickerHandle += ExampleEvent.OnStickerHandle;
+		tg.Handler.Router.OnStickerHandle += PaintingSellingBot.Events.OnStickerHandle;
 
 		//Обработка сообщения с голосовым сообщением
-		tg.Handler.Router.OnVoiceHandle += ExampleEvent.OnVoiceHandle;
+		tg.Handler.Router.OnVoiceHandle += PaintingSellingBot.Events.OnVoiceHandle;
 
 		//Обработка сообщения с неизвестным типом
-		tg.Handler.Router.OnUnknownHandle += ExampleEvent.OnUnknownHandle;
+		tg.Handler.Router.OnUnknownHandle += PaintingSellingBot.Events.OnUnknownHandle;
 
 		//Обработка сообщения с местоположением
-		tg.Handler.Router.OnVenueHandle += ExampleEvent.OnVenueHandle;
+		tg.Handler.Router.OnVenueHandle += PaintingSellingBot.Events.OnVenueHandle;
 
 		//Обработка сообщения с игрой
-		tg.Handler.Router.OnGameHandle += ExampleEvent.OnGameHandle;
+		tg.Handler.Router.OnGameHandle += PaintingSellingBot.Events.OnGameHandle;
 
 		//Обработка сообщения с видеозаметкой
-		tg.Handler.Router.OnVideoNoteHandle += ExampleEvent.OnVideoNoteHandle;
+		tg.Handler.Router.OnVideoNoteHandle += PaintingSellingBot.Events.OnVideoNoteHandle;
 
 		//Обработка сообщения с игральной костью
-		tg.Handler.Router.OnDiceHandle += ExampleEvent.OnDiceHandle;
+		tg.Handler.Router.OnDiceHandle += PaintingSellingBot.Events.OnDiceHandle;
 
 	}
-
+	/*
 	tg.RegisterInlineCommand(AddCustomTHeader.TestAddCommand, async (botClient, update) =>
 	{
 		PRTelegramBot.Helpers.Message.Send(botClient, update, "Тест метода TestAddCommand");
@@ -103,6 +103,7 @@ void HandlerInit(PRTelegramBot.Core.PRBot tg)
 	{
 		PRTelegramBot.Helpers.Message.Send(botClient, update, "Тест метода TestAddCommandTwo");
 	});
+	*/
 }
 
 // Обработчик_Обновление 
