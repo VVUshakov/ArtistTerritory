@@ -1,10 +1,11 @@
 ﻿using PaintingSellingBot.Configs;
+using PRTelegramBot.Configs;
 using PRTelegramBot.Core;
 
 
 #region [Запуск PaintingSellingBot]
 
-var paintingSellingBotConfig = ConfigApp.GetSettingsBot<PaintingSellingBotConfig>();
+var paintingSellingBotConfig = ConfigApp.GetSettingsBot<TelegramConfig>();
 var paintingSellingBot = new PRBot(paintingSellingBotConfig);
 
 
