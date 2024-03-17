@@ -5,14 +5,18 @@ using PRTelegramBot.Core;
 
 #region [Запуск PaintingSellingBot]
 
-var paintingSellingBotConfig = ConfigApp.GetSettingsBot<TelegramConfig>();
-var paintingSellingBot = new PRBot(paintingSellingBotConfig);
+// Получить конфигурацию бота
+var telegramConfig = ConfigApp.GetSettingsBot<TelegramConfig>();
+// Получить экземпляр бота из библиотеки PRTelegramBot
+var paintingSellingBot = new PRBot(telegramConfig);
 
-
+// Подписаться на общие логи
 paintingSellingBot.OnLogCommon += Telegram_OnLogCommon;
+// Подписаться на логи ошибок
 paintingSellingBot.OnLogError += Telegram_OnLogError;
-await paintingSellingBot.Start();
 
+// Запустить бот
+await paintingSellingBot.Start();
 
 #endregion [Запуск PaintingSellingBot]
 
