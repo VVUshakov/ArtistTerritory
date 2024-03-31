@@ -6,12 +6,23 @@ namespace PaintingSellingBot.Extension
 	// Метод расширения для выбора используемой базы данных
 	public static class DbContextOptionsBuilderExtensions
 	{
-		public static DbContextOptionsBuilder UseDatabase(this DbContextOptionsBuilder builder, string connectionString, string providerName)
+		public static DbContextOptionsBuilder UseDatabase(this DbContextOptionsBuilder builder, string providerName)
 		{
+			string connectionString = string.Empty;
+
+
+
+
 			switch(providerName)
 			{
-				case "SqlServer": builder.UseSqlServer(connectionString); break;
-				case "Sqlite": builder.UseSqlite(connectionString); break;
+				case "SqlServer":
+					builder.UseSqlServer(connectionString);
+					break;
+
+				case "Sqlite":
+					builder.UseSqlite(connectionString);
+					break;
+
 				// Добавьте сюда другие провайдеры по аналогии
 
 				// Обработка неизвестного провайдера

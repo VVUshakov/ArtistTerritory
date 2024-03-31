@@ -1,11 +1,44 @@
-﻿#region [Запустить Бот]
+﻿/*
+#region [Создание/Миграция БД]
 
+var optionsBuilder = new DbContextOptionsBuilder<PaintingSellingBot.Models.GalleryEntity.GalleryDbContext>();
+
+// Здесь мы пытаемся получить строку подключения из конфигурации или другого источника
+string connectionString = string.Empty;// = GetConnectionStringFromConfiguration();
+
+if(!string.IsNullOrEmpty(connectionString))
+{
+	// Если строка подключения получена, используем ее для настройки контекста
+	optionsBuilder.UseDatabase("SQLite");
+}
+else
+{
+	// Если строка подключения не получена, выводим сообщение об ошибке
+	Console.WriteLine("Connection string not found.");
+	return;
+}
+
+using(var context = new PaintingSellingBot.Models.GalleryEntity.GalleryDbContext(optionsBuilder.Options))
+{
+	context.Database.EnsureCreated();
+}
+
+#endregion
+*/
+
+#region [Запустить Бот]
+
+/*
 // Получить конфигурацию бота
 PRTelegramBot.Configs.TelegramConfig telegramConfig
-	= PaintingSellingBot.Configs.ConfigApp.GetSettingsBot<PRTelegramBot.Configs.TelegramConfig>();
+	= PaintingSellingBot.Configs.ConfigApp.GetSettings<PRTelegramBot.Configs.TelegramConfig>();
 
 // Получить экземпляр бота из библиотеки PRTelegramBot
 PRTelegramBot.Core.PRBot bot = new(telegramConfig);
+*/
+
+// Получить экземпляр бота из библиотеки PRTelegramBot
+PRTelegramBot.Core.PRBot bot = new(PaintingSellingBot.Configs.ConfigApp.GetSettings<PRTelegramBot.Configs.TelegramConfig>());
 
 // Инициализировать обработчики событий
 HandlerInit(bot);
@@ -160,3 +193,4 @@ void Telegram_OnLogCommon(string msg, Enum? eventType, ConsoleColor color = Cons
 }
 
 #endregion
+

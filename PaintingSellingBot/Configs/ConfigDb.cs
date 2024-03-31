@@ -2,21 +2,21 @@
 
 namespace PaintingSellingBot.Configs
 {
-	public class ConfigApp
+	public class ConfigDb
 	{
-		private static string _configFileName = "botconfig";
+		private static string _configFileName = "dbconfig";
 
-		private static ConfigApp? Instance;
+		private static ConfigDb? Instance;
 
 		public IConfigurationRoot Config { get; }
 
-		public static ConfigApp GetInstance() => Instance ??= new ConfigApp();
+		public static ConfigDb GetInstance() => Instance ??= new ConfigDb();
 
-		private ConfigApp() => Config = new ConfigurationBuilder()
+		private ConfigDb() => Config = new ConfigurationBuilder()
 					 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
 					 .AddJsonFile($"Configs/{_configFileName}.json").Build();
 
-		public static T GetSettings<T>()
+		public static T GetSettingsDb<T>()
 		{
 			var config = GetInstance().Config;
 			var section = config.GetSection(typeof(T).Name);

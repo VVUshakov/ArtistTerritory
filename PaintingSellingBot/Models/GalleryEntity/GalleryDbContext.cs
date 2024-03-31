@@ -18,6 +18,10 @@ namespace PaintingSellingBot.Models.GalleryEntity
 		// TODO: Нужно заменить "YourConnectionStringHere" на реальную строку подключения
 		private static readonly string connectionStringDb = "YourConnectionStringHere";
 
+		public GalleryDbContext(DbContextOptions options) : base(options)
+		{
+
+		}
 
 		public DbSet<Picture> Pictures { get; set; }
 		public DbSet<Artist> Artists { get; set; }
@@ -30,7 +34,7 @@ namespace PaintingSellingBot.Models.GalleryEntity
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
 			// Вызов метода расширения для выбора базы данных
-			optionsBuilder.UseDatabase(connectionStringDb, nameDb);
+			optionsBuilder.UseDatabase(nameDb);
 		}
 
 		/// <summary>
