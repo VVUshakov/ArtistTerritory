@@ -23,24 +23,21 @@ void HandlerInit(PRTelegramBot.Core.PRBot tg)
 {
 	if(tg.Handler != null)
 	{
-		//Обработка обновление 
+		//Обработка: обновление 
 		tg.Handler.OnPreUpdate += Handler_OnUpdate;
 
-		//Обработка обновление кроме message и callback
+		//Обработка: обновление кроме message и callback
 		tg.Handler.OnPostMessageUpdate += Handler_OnWithoutMessageUpdate;
 
-		//Обработка не правильный тип сообщений
+		//Обработка: не правильный тип сообщений
 		tg.Handler.Router.OnWrongTypeMessage += PaintingSellingBot.Events.OnWrongTypeMessage;
 
-		//Обработка пользователь написал в чат start с deeplink
+		//Обработка: пользователь написал в чат start с deeplink
 		tg.Handler.Router.OnUserStartWithArgs += PaintingSellingBot.Events.OnUserStartWithArgs;
 
-		//Обработка проверка привилегий
-		tg.Handler.Router.OnCheckPrivilege += PaintingSellingBot.Events.OnCheckPrivilege;
-
-		//Обработка пропущенной  команды
-		tg.Handler.Router.OnMissingCommand += PaintingSellingBot.Events.OnMissingCommand;
-
+		//Обработка: проверка привилегий
+		tg.Handler.Router.OnCheckPrivilege += PaintingSellingBot.Events.OnCheckPrivilege;		
+		
 		//Обработка не верного типа чата
 		tg.Handler.Router.OnWrongTypeChat += PaintingSellingBot.Events.OnWrongTypeChat;
 
@@ -71,7 +68,7 @@ void HandlerInit(PRTelegramBot.Core.PRBot tg)
 		//Обработка сообщения с фото
 		tg.Handler.Router.OnPhotoHandle += PaintingSellingBot.Events.OnPhotoHandle;
 
-		//Обработка сообщения с стикером
+		//Обработка сообщения со стикером
 		tg.Handler.Router.OnStickerHandle += PaintingSellingBot.Events.OnStickerHandle;
 
 		//Обработка сообщения с голосовым сообщением
@@ -92,6 +89,8 @@ void HandlerInit(PRTelegramBot.Core.PRBot tg)
 		//Обработка сообщения с игральной костью
 		tg.Handler.Router.OnDiceHandle += PaintingSellingBot.Events.OnDiceHandle;
 
+		//Обработка пропущенной  команды (отсутсвующей в подписках)
+		tg.Handler.Router.OnMissingCommand += PaintingSellingBot.Events.OnMissingCommand;
 	}
 	/*
 	tg.RegisterInlineCommand(AddCustomTHeader.TestAddCommand, async (botClient, update) =>
