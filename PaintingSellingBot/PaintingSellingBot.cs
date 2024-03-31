@@ -25,10 +25,11 @@ Console.WriteLine("Программа запущена");
 // Уведомление о команде закрытия программы 
 Console.WriteLine($"Для закрытия программы напишите {EXIT_COMMAND}");
 
-//Ожидание ввода команды
+// Ожидание ввода команды
 while(true)
 {
-	if(Console.ReadLine().ToLower() == EXIT_COMMAND)
+	// Игнорировать регистр сравниваемых строк
+	if(Console.ReadLine().Equals(EXIT_COMMAND, StringComparison.CurrentCultureIgnoreCase))
 	{
 		Environment.Exit(0);
 	}
