@@ -5,6 +5,10 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaintingSellingBot", "PaintingSellingBot\PaintingSellingBot.csproj", "{35AEBEA6-C2C7-4EF8-B00B-DDF793487B9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.BotTG", "Service.BotTG\Service.BotTG.csproj", "{883CA819-881A-4D5A-B0E8-CD3FCC942F59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.ConfigBuilder", "Service.ConfigBuilder\Service.ConfigBuilder.csproj", "{1D1BBD80-7F5B-4C7A-8FAB-5E07DD29B777}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{35AEBEA6-C2C7-4EF8-B00B-DDF793487B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35AEBEA6-C2C7-4EF8-B00B-DDF793487B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35AEBEA6-C2C7-4EF8-B00B-DDF793487B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{883CA819-881A-4D5A-B0E8-CD3FCC942F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{883CA819-881A-4D5A-B0E8-CD3FCC942F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{883CA819-881A-4D5A-B0E8-CD3FCC942F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{883CA819-881A-4D5A-B0E8-CD3FCC942F59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D1BBD80-7F5B-4C7A-8FAB-5E07DD29B777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D1BBD80-7F5B-4C7A-8FAB-5E07DD29B777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D1BBD80-7F5B-4C7A-8FAB-5E07DD29B777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D1BBD80-7F5B-4C7A-8FAB-5E07DD29B777}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -48,6 +48,55 @@ await bot.Start();
 
 #endregion
 
+/*
+#region[ПРИМЕР ИСПОЛЬЗОВАНИЯ СЕРВИСОВ]
+// Пример использования
+public class Service1
+{
+	private readonly IConfigBuilder _config;
+
+	public Service1(IConfigBuilder config)
+	{
+		_config = config;
+	}
+
+	public void DoSomething()
+	{
+		// Используем конфигурацию для сервиса 1
+		var settings = _config.GetSettings<Service1Settings>();
+		// ...
+	}
+}
+
+public class Service2
+{
+	private readonly IConfigBuilder _config;
+
+	public Service2(IConfigBuilder config)
+	{
+		_config = config;
+	}
+
+	public void DoSomethingElse()
+	{
+		// Используем конфигурацию для сервиса 2
+		var settings = _config.GetSettings<Service2Settings>();
+		// ...
+	}
+}
+
+// Создание экземпляров сервисов с соответствующими конфигурациями
+var service1Config = ConfigBuilderFactory.GetInstance<AppConfig>();
+var service2Config = ConfigBuilderFactory.GetInstance<DbConfig>();
+
+var service1 = new Service1(service1Config);
+var service2 = new Service2(service2Config);
+
+service1.DoSomething();
+service2.DoSomethingElse();
+#endregion
+*/
+
 #region [Держать консоль открытой]
 
 //Команда для завершения приложения
